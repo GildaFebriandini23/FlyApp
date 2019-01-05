@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import {View, Text, StyleSheet, Button} from 'react-native';
+import {getCustomerList} from "../service/CustomerServiceAxios";
 
 export default class DashBoardContainer extends Component{ //component yang sifatnya parent, tempat initial State
 
     constructor(props){
         super(props);
+        console.log(props)
     }
 
     render() {
@@ -19,6 +21,8 @@ export default class DashBoardContainer extends Component{ //component yang sifa
                 </View>
         );
     }
+
+
 }
 
 const styles = StyleSheet.create({

@@ -3,7 +3,25 @@ import { Text, View, TextInput, Button, Alert, StyleSheet } from 'react-native';
 import SubmitComponent from "./SubmitComponent";
 
 export default class FormComponent extends Component {
+   shouldComponentUpdate(nextProps, nextState, nextContext) {
+       console.log("UserIconContainer  - component shouldComponentUpdate dipanggil");
+   }
+
+    componentDidMount() {
+        console.log("UserIconContainer  - component Didmount dipanggil");
+    }
+
+   componentDidUpdate(prevProps, prevState, snapshot) {
+       console.log("UserIconContainer  - component Didupdate dipanggil");
+   }
+
+
+    componentWillMount() {
+        console.log("UserIconContainer  - componentWillmount Didmount dipanggil");
+    }
+
     constructor(props) {
+        console.log("UserIconContainer  - contructor dipanggil");
         super(props);
         this.state = {
             user : {
@@ -14,6 +32,7 @@ export default class FormComponent extends Component {
     }
 
     render() {
+        console.log("UserIconContainer  - render dipanggil");
         return (
             <View>
                 <View style={styles.bingkai}>

@@ -1,11 +1,25 @@
 import React, { Component } from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import UserIconComponent from './UserIconComponent';
-import SubmitComponent from './SubmitComponent';
 
 export default class UserFormContainer extends Component { //component yang sifatnya parent, tempat initial State
+   shouldComponentUpdate(nextProps, nextState, nextContext) {
+       console.log("UserFormContainer  - component shouldComponentUpdate dipanggil");
+   }
 
+    componentDidMount() {
+        console.log("UserFormContainer - component Didmount dipanggil");
+    }
+
+   componentDidUpdate(prevProps, prevState, snapshot) {
+       console.log("UserFormContainer - component Didupdate dipanggil");
+   }
+
+    componentWillMount() {
+        console.log("UserFormContainer - componentWiiUnmount Didmount dipanggil");
+    }
     constructor(props) {
+        console.log("UserFormContainer  - contructor dipanggil");
         super(props);
         this.state = {
             user: {
@@ -16,6 +30,7 @@ export default class UserFormContainer extends Component { //component yang sifa
     }
 
     render() {
+        console.log("UserIconContainer  - render dipanggil");
         return (
             <View style={styles.container}>
                 <UserIconComponent user={this.state.user} handleUsername={this.handleUsername.bind(this)}
